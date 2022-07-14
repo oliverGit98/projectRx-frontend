@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: $ff-body;
+    min-height: 100vh;
+}
+
+.p-component {
+    font-family: $ff-body;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, 
+li {
+    list-style: none;
+}
+
+img,
+picture {
+    display: block;
+    width: 100%;
+}
+

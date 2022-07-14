@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { ContainerComponent } from './shared/container/container.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [
+    AppComponent,
+    ContainerComponent,
+    SidebarComponent,
+  ],
   imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
