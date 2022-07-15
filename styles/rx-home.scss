@@ -1,0 +1,17 @@
+@import '~normalize.css/normalize.css';
+
+@import './base/fonts.scss';
+@import './base/variables.scss';
+@import './base/config.scss';
+
+//Libraries
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/saga-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~primeflex/primeflex.css';
+
+
+@import './apps/rx-home/navbar.scss';
+@import './apps/rx-home/container.scss';
+@import './apps/rx-home/footer.scss';
+@import './apps/rx-home/home.scss';

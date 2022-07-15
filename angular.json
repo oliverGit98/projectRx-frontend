@@ -3,6 +3,9 @@
   "version": 2,
   "projects": {
     "admin-app": "apps/admin-app",
-    "admin-app-e2e": "apps/admin-app-e2e"
+    "admin-app-e2e": "apps/admin-app-e2e",
+    "drugs": "libs/drugs",
+    "rx-home": "apps/rx-home",
+    "rx-home-e2e": "apps/rx-home-e2e"
   }
 }

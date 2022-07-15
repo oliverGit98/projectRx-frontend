@@ -7,11 +7,17 @@
 html,
 body {
     font-family: $ff-body;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 .p-component {
     font-family: $ff-body;
+    font-size: .9rem;
+}
+
+.p-element {
+    font-family: $ff-body;
+    font-size: .9rem;
 }
 
 a {
@@ -29,4 +35,18 @@ picture {
     display: block;
     width: 100%;
 }
+
+button,
+.btn {
+    display: inline-block;
+    padding: .5rem .8rem;
+    font-size: .9rem;
+    font-weight: 500;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $clr-white;
+}
+
 
