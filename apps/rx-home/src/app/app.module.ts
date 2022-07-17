@@ -11,6 +11,12 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { DoctorsFormComponent } from './components/doctors-form/doctors-form.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+
+import { Specialities } from '@frontend/doctors';
+import { DoctorsService } from '@frontend/doctors';
+import { CookieService } from 'ngx-cookie-service'
 
 //ux modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +28,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { PasswordModule } from 'primeng/password';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 const UX_MODULES = [
   BrowserAnimationsModule,
@@ -33,30 +41,48 @@ const UX_MODULES = [
   DropdownModule,
   ToastModule,
   ConfirmDialogModule,
+  PasswordModule,
+  AutoCompleteModule,
 ];
 
-const routes: Routes = [{
-  path: '',
-  component: ContainerComponent,
-  children: [
-    {
-      path: '',
-      component: HomeComponent
-    },
-    {
-      path: 'home',
-      component: HomeComponent
-    },
-    {
-      path: 'login',
-      component: LoginComponent
-    },
-    {
-      path: 'register',
-      component: RegisterComponent
-    }
-  ]
-}]
+const routes: Routes = [
+  {
+    path: '',
+    component: ContainerComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
+        children: [
+          {
+            path: '',
+            component: DoctorsFormComponent
+          },
+          {
+            path: 'verify',
+            component: VerifyEmailComponent
+          },
+          {
+            path: 'verify/:id/:token',
+            component: VerifyEmailComponent
+          }
+        ]
+      },
+    ],
+  },
+];
 
 @NgModule({
   declarations: [
@@ -67,6 +93,8 @@ const routes: Routes = [{
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    DoctorsFormComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +104,7 @@ const routes: Routes = [{
     RouterModule.forRoot(routes),
     ...UX_MODULES,
   ],
-  providers: [],
+  providers: [Specialities, DoctorsService, CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

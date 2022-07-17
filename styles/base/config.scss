@@ -49,4 +49,28 @@ button,
     color: $clr-white;
 }
 
+.autocomplete-field {
+    display: flex;
+    flex-direction: column;
+}
+
+p-autoComplete {
+    width: 100%;
+}
+
+.text-field {
+    display: flex;
+    align-self: center;
+    justify-content: flex-start;
+    margin-bottom: 1.2rem;
+
+    h4 {
+        font-weight: 500;
+    }
+    
+    .header {
+        width: 8rem;
+        font-weight: 400;
+    }
+}
 

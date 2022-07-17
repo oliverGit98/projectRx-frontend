@@ -9,9 +9,12 @@ import { ContainerComponent } from './shared/container/container.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { DrugsListComponent } from './drugs/drugs-list/drugs-list.component';
 import { DrugsFormComponent } from './drugs/drugs-form/drugs-form.component';
+import { DocListComponent } from './doctors/doc-list/doc-list.component';
+import { SingleDocComponent } from './doctors/single-doc/single-doc.component';
 
 import { DrugsService } from '@frontend/drugs';
-import { MessageService, ConfirmationService} from 'primeng/api';
+import { DoctorsService } from '@frontend/doctors';
+import { MessageService, ConfirmationService } from 'primeng/api';
 
 //ux modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +26,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { FieldsetModule } from 'primeng/fieldset';
+import { PanelModule } from 'primeng/panel';
+import { BadgeModule } from 'primeng/badge';
 
 const UX_MODULES = [
   BrowserAnimationsModule,
@@ -34,6 +40,9 @@ const UX_MODULES = [
   DropdownModule,
   ToastModule,
   ConfirmDialogModule,
+  FieldsetModule,
+  PanelModule,
+  BadgeModule
 ];
 
 const routes: Routes = [
@@ -47,12 +56,20 @@ const routes: Routes = [
       },
       {
         path: 'drugs/form',
-        component: DrugsFormComponent
+        component: DrugsFormComponent,
       },
       {
         path: 'drugs/form/:id',
-        component: DrugsFormComponent
-      }
+        component: DrugsFormComponent,
+      },
+      {
+        path: 'doctors',
+        component: DocListComponent,
+      },
+      {
+        path: 'doctors/:id',
+        component: SingleDocComponent,
+      },
     ],
   },
 ];
@@ -64,6 +81,8 @@ const routes: Routes = [
     SidebarComponent,
     DrugsListComponent,
     DrugsFormComponent,
+    DocListComponent,
+    SingleDocComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +92,12 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ...UX_MODULES,
   ],
-  providers: [DrugsService, MessageService, ConfirmationService],
+  providers: [
+    DrugsService,
+    MessageService,
+    ConfirmationService,
+    DoctorsService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
