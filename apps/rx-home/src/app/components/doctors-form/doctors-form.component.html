@@ -31,6 +31,13 @@
         </div>
 
         <div class="field">
+            <label for="mobile">National ID Card Number</label>
+            <input formControlName="nic" id="nic" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+
+            <small *ngIf="form.controls.mobile.invalid && isSubmitted" class="p-error">NIC is required</small>
+        </div>
+
+        <div class="field">
             <label for="address">Address</label>
             <input formControlName="address" id="address" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
 
@@ -38,10 +45,14 @@
         </div>
 
         <div class="field">
-            <label for="slmcRegNo">SLMC Registration Number</label>
-            <input formControlName="slmcRegNo" id="slmcRegNo" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+            <label for="slmcRegNo">SLMC Registration Number & Image of Your Registration Document</label>
+            <input formControlName="slmcRegNo" id="slmcRegNo" type="number" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
 
-            <small *ngIf="form.controls.slmcRegNo.invalid && isSubmitted" class="p-error">SLMC Registration number Required</small>
+            <label class="btn btn-file" for="slmcDocument"><i class="fa-solid fa-file-image"></i>Choose an Image</label>
+            <input id="slmcDocument" formControlName="slmcDocument" id="slmcDocument" type="file" (change)="onImageChange($event)">
+            <small *ngIf="imageName" class="mr-2">{{imageName}}</small>
+
+            <small *ngIf="(form.controls.slmcRegNo.invalid && isSubmitted) || (emptyImage && isSubmitted)" class="p-error">SLMC Registration number and Image Required</small>
         </div>
 
         <div class="field">

@@ -18,8 +18,8 @@ export class DoctorsService {
     return this.http.get<Doctor>(`http://localhost:3000/rxp/doctors/get/${id}`)
   }
 
-  createDoctor(doctor: Doctor) : Observable<Doctor> {
-    return this.http.post<Doctor>('http://localhost:3000/rxp/doctors/register', doctor)
+  createDoctor(doctor: FormData) : Observable<FormData> {
+    return this.http.post<FormData>('http://localhost:3000/rxp/doctors/register', doctor)
   }
 
   login(username: string, passwaord: string): Observable<Doctor> {

@@ -40,6 +40,22 @@
     padding-block: 2rem;
 }
 
+input[type=file]{
+    display: none;
+}
+
+.btn-file {
+    margin-top: 1rem;
+    background-color: #64748b;
+    margin-right: 1rem;
+    cursor: pointer;
+    border-radius: .25rem;
+
+    i {
+        margin-right: .5rem;
+    }
+}
+
 .verify-text {
     text-align: center;
 

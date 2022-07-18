@@ -30,6 +30,7 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { PasswordModule } from 'primeng/password';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { FileUploadModule } from 'primeng/fileupload';
 
 const UX_MODULES = [
   BrowserAnimationsModule,
@@ -43,6 +44,7 @@ const UX_MODULES = [
   ConfirmDialogModule,
   PasswordModule,
   AutoCompleteModule,
+  FileUploadModule
 ];
 
 const routes: Routes = [
