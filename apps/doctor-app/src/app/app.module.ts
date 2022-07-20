@@ -8,11 +8,14 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ContainerComponent } from './shared/container/container.component';
 import { ProfileComponent } from './profile/profile/profile.component';
+import { PrescriptionsComponent } from './prescriptions/prescriptions/prescriptions.component';
+import { AddPrescriptionComponent } from './prescriptions/add-prescription/add-prescription.component';
 
 import { DrugsService } from '@frontend/drugs';
 import { MessageService, ConfirmationService } from 'primeng/api';
 import { DoctorsService } from '@frontend/doctors';
 import { CookieService } from 'ngx-cookie-service';
+import { PrescriptionService } from '@frontend/prescription';
 
 //ux modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +28,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
-import { NewUsersComponent } from './doctors/new-users/new-users.component';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 const UX_MODULES = [
   BrowserAnimationsModule,
@@ -38,6 +41,7 @@ const UX_MODULES = [
   ToastModule,
   ConfirmDialogModule,
   DialogModule,
+  AutoCompleteModule
 ];
 
 const routes: Routes = [
@@ -49,6 +53,14 @@ const routes: Routes = [
         path: 'profile',
         component: ProfileComponent,
       },
+      {
+        path: 'prescriptions',
+        component: PrescriptionsComponent
+      },
+      {
+        path: 'prescriptions/new',
+        component: AddPrescriptionComponent
+      }
     ],
   },
 ];
@@ -59,7 +71,8 @@ const routes: Routes = [
     SidebarComponent,
     ContainerComponent,
     ProfileComponent,
-    NewUsersComponent,
+    PrescriptionsComponent,
+    AddPrescriptionComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +88,7 @@ const routes: Routes = [
     MessageService,
     ConfirmationService,
     CookieService,
+    PrescriptionService
   ],
   bootstrap: [AppComponent],
 })

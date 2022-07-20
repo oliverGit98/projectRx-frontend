@@ -8,6 +8,7 @@
     "doctor-app-e2e": "apps/doctor-app-e2e",
     "doctors": "libs/doctors",
     "drugs": "libs/drugs",
+    "prescription": "libs/prescription",
     "rx-home": "apps/rx-home",
     "rx-home-e2e": "apps/rx-home-e2e"
   }

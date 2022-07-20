@@ -29,6 +29,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { FieldsetModule } from 'primeng/fieldset';
 import { PanelModule } from 'primeng/panel';
 import { BadgeModule } from 'primeng/badge';
+import { ImageModule } from 'primeng/image';
+import { PrescriptionListComponent } from './prescription/prescription-list/prescription-list.component';
 
 const UX_MODULES = [
   BrowserAnimationsModule,
@@ -42,7 +44,8 @@ const UX_MODULES = [
   ConfirmDialogModule,
   FieldsetModule,
   PanelModule,
-  BadgeModule
+  BadgeModule,
+  ImageModule,
 ];
 
 const routes: Routes = [
@@ -70,6 +73,10 @@ const routes: Routes = [
         path: 'doctors/:id',
         component: SingleDocComponent,
       },
+      {
+        path: 'prescriptions',
+        component: PrescriptionListComponent
+      }
     ],
   },
 ];
@@ -83,6 +90,7 @@ const routes: Routes = [
     DrugsFormComponent,
     DocListComponent,
     SingleDocComponent,
+    PrescriptionListComponent,
   ],
   imports: [
     BrowserModule,

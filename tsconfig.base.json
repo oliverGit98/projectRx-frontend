@@ -17,7 +17,8 @@
     "paths": {
       "@frontend/data": ["libs/data/src/index.ts"],
       "@frontend/doctors": ["libs/doctors/src/index.ts"],
-      "@frontend/drugs": ["libs/drugs/src/index.ts"]
+      "@frontend/drugs": ["libs/drugs/src/index.ts"],
+      "@frontend/prescription": ["libs/prescription/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

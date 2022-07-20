@@ -16,7 +16,7 @@
                 </p-toolbar>
             </div>
         </div>
-
+        
         <p-fieldset legend="Contact Information" styleClass="mb-2">
             <div class="text-field">
                 <h4 class="header">Full name</h4>
@@ -31,6 +31,11 @@
             <div class="text-field">
                 <h4 class="header">Phone Number</h4>
                 <h4>{{doctor.mobile}}</h4>
+            </div>
+
+            <div class="text-field">
+                <h4 class="header">NIC</h4>
+                <h4>{{doctor.nic}}</h4>
             </div>
 
             <div class="text-field">
@@ -58,6 +63,13 @@
 
         </p-fieldset>
 
+        <p-fieldset legend="SLMC Registration Document" styleClass="mb-2">
+            
+            <div class="img-container">
+                <p-image src="{{doctor.slmcDocument}}" alt="slmcDocument" [preview]="true"></p-image>
+            </div>
+        </p-fieldset>
+        
     </p-card>
 </div>
 
